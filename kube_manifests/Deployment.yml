@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: hw-2-deployment
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hw-2-app
+
+  template:
+    metadata:
+      labels:
+        app: hw-2-app
+
+    spec:
+      containers:
+        - name:  hw-2
+          image: maksru/otusarchitect:hw_1
+          ports:
+            - name: web
+              containerPort: 8000
+          livenessProbe:
+            httpGet:
+              port: 8000
+              path: /health
+            initialDelaySeconds: 10
+            periodSeconds: 5
+            timeoutSeconds: 2
+          readinessProbe:
+            httpGet:
+              port: 8000
+              path: /health
+            initialDelaySeconds: 10
+            periodSeconds: 5

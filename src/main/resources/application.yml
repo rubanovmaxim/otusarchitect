@@ -11,15 +11,20 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-      #ddl-auto: none
+      #ddl-auto: none:=
+
+    database-platform:
   datasource:
     platform: postgres
+#    url: ${P_URL:jdbc:postgresql://localhost:5432/bookstore}
     url: ${P_URL}
-    username: ${POSTGRES_USER}
-    password: ${POSTGRES_PASSWORD}
+    username: ${POSTGRES_USER:postgres}
+    password: ${POSTGRES_PASSWORD:admin}
+    driverClassName: org.postgresql.Driver
+
     #    username: webedi
     #    password: 111111
-    driverClassName: org.postgresql.Driver
+
 
 #  datasource:
 #    platform: postgres

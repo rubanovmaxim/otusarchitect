@@ -16,8 +16,8 @@ spring:
     database-platform:
   datasource:
     platform: postgres
-#    url: ${P_URL:jdbc:postgresql://localhost:5432/bookstore}
-    url: ${P_URL}
+    url: ${P_URL:jdbc:postgresql://postgres:5432/bookstore}
+#    url: ${P_URL}
     username: ${POSTGRES_USER:postgres}
     password: ${POSTGRES_PASSWORD:admin}
     driverClassName: org.postgresql.Driver

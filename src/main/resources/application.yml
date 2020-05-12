@@ -13,24 +13,10 @@ spring:
       ddl-auto: update
       #ddl-auto: none:=
 
-    database-platform:
   datasource:
     platform: postgres
-    url: ${P_URL:jdbc:postgresql://postgres:5432/bookstore}
+    url: jdbc:postgresql://postgres:5432/bookstore
 #    url: ${P_URL}
     username: ${POSTGRES_USER:postgres}
     password: ${POSTGRES_PASSWORD:admin}
     driverClassName: org.postgresql.Driver
-
-    #    username: webedi
-    #    password: 111111
-
-
-#  datasource:
-#    platform: postgres
-#    url: jdbc:postgresql://localhost:5432/bookstore
-#    username: postgres
-#    password: admin
-#    #    username: webedi
-#    #    password: 111111
-#    driverClassName: org.postgresql.Driver
